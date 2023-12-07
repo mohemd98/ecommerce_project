@@ -28,4 +28,7 @@ Route::group(['as' => 'dashboard.'], function () {
     Route::get('categories/ajax',[App\Http\Controllers\Dashboard\CategoryController::class , 'getall'])->name('categories.getall');
     Route::delete('categories/delete',[App\Http\Controllers\Dashboard\CategoryController::class , 'delete'])->name('categories.delete');
     Route::resource('categories', App\Http\Controllers\Dashboard\CategoryController::class)->except('destroy','create' , 'show');
+    Route::get('products/ajax',[App\Http\Controllers\Dashboard\ProductController::class , 'getall'])->name('products.getall');
+    Route::resource('products', App\Http\Controllers\Dashboard\ProductController::class)->except('show');
+
 });

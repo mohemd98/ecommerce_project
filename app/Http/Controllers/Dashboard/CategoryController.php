@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Dashboard\Categories\CategoryDelete;
 use App\Http\Requests\Dashboard\Categories\CategoryDeleteRequest;
 use App\Http\Requests\Dashboard\Categories\CategoryStoreRequest;
 use App\Http\Requests\Dashboard\Categories\CategoryUpdateRequest;
@@ -11,9 +11,9 @@ use App\Models\Category;
 use App\Services\CategoryService;
 use Illuminate\Http\Request;
 use DataTables;
-
 class CategoryController extends Controller
 {
+
     private $categoryService;
 
     public function __construct(CategoryService $categoryService)
@@ -60,7 +60,7 @@ class CategoryController extends Controller
 
     public function delete(CategoryDeleteRequest $request)
     {
-        Category::whereId($request->id)->delete();
+        $this->categoryService->delete($request->validated());
         return redirect()->route('dashboard.categories.index');
     }
 }
