@@ -14,7 +14,7 @@ class ProductImage extends Model
 
     public function productColorSize()
     {
-        return $this->belongsTo(ProductColorSize::class);
+        return $this->belongsTo(Product::class);
     }
 
 }

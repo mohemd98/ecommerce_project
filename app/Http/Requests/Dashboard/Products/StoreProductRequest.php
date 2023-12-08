@@ -33,6 +33,10 @@ class StoreProductRequest extends FormRequest
             'discount_price'=>'nullable|numeric',
             'colors'=>'nullable|array',
             'colors.*'=>'nullable|string',
+            'sizes'=>'nullable|array',
+            'sizes.*'=>'nullable|string',
+            'images'=>'nullable|array',
+            'images.*'=>'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ];
     }
 }

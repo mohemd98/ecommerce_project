@@ -81,7 +81,8 @@
 
                                         <div class="form-group">
                                             <label class="col-form-label">وصف المنتج</label>
-                                            <textarea rows="5" cols="12" name="description">{{ $setting->twitter }}</textarea>
+                                            <textarea rows="5" cols="12"
+                                                      name="description">{{ $setting->twitter }}</textarea>
                                         </div>
                                         <div class="form-group">
                                             <label for="validationCustom02" class="col-form-label">
@@ -98,32 +99,47 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="validationCustom02" class="col-form-label" >
+                                            <label for="validationCustom02" class="col-form-label">
                                                 الألوان المتاحة للمنتج </label>
                                             <select class="form-control colors" multiple="multiple" name="colors[]">
                                             </select>
                                         </div>
 
 
+                                        <div class="form-group">
+                                            <label for="validationCustom02" class="col-form-label">
+                                                الاحجام المتوفرة </label>
+                                            <select class="form-control colors" multiple="multiple" name="sizes[]">
+                                            </select>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label for="validationCustom05" class="col-form-label pt-0">
+                                                صور المنتج</label>
+                                            <input class="form-control dropify" id="validationCustom05" type="file"
+                                                   name="images[]" multiple>
+                                        </div>
+
                                     </div>
+{{--                            </div>--}}
 
 
-
-                                    <div class="form-group">
-                                        <button class="btn btn-primary" type="submit">حفظ</button>
-                                    </div>
-
-
-                                </form>
-
+                            <div class="form-group">
+                                <button class="btn btn-primary" type="submit">حفظ</button>
                             </div>
+
+
+                            </form>
+
                         </div>
                     </div>
                 </div>
-
             </div>
+
         </div>
-        <!-- Container-fluid Ends-->
+    </div>
+    <!-- Container-fluid Ends-->
 
     </div>
     </div>
@@ -136,4 +152,5 @@
             tags: true
         });
     </script>
+
 @endpush
